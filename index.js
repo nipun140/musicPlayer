@@ -7,8 +7,6 @@ let music = document.querySelector("audio");
 let img = document.querySelector("img");
 let pauseBtn = document.querySelector(".fa-pause");
 
-prevBtn.addEventListener("click", () => {});
-
 let playMusic = () => {
   music.play();
   playBtn.classList.replace("fa-play", "fa-pause");
@@ -23,6 +21,7 @@ let pauseMusic = () => {
   isPlaying = false;
 };
 
+//play pause songs
 let isPlaying = false; //initially false not playing
 playBtn.addEventListener("click", () => {
   if (!isPlaying) {
@@ -69,4 +68,31 @@ prevBtn.addEventListener("click", () => {
   songIndex = (songIndex - 1 + songs.length) % songs.length;
   loadsongs(songs[songIndex]);
   playMusic();
+});
+
+//keyboard events
+document.addEventListener("keydown", (event) => {
+  switch (event.code) {
+    case "Space":
+      if (!isPlaying) {
+        playMusic();
+      } else {
+        pauseMusic();
+      }
+      break;
+
+    case "ArrowRight":
+      songIndex++;
+      songIndex = songIndex % songs.length;
+      loadsongs(songs[songIndex]);
+      playMusic(); //play music if changed while playing the previuos music
+      break;
+
+    case "ArrowLeft":
+      songIndex--;
+      songIndex = (songIndex - 1 + songs.length) % songs.length;
+      loadsongs(songs[songIndex]);
+      playMusic();
+      break;
+  }
 });
