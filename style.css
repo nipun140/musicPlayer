@@ -95,3 +95,12 @@ body {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 500px) {
+  .music_container {
+    width: 90vw;
+  }
+  .music_controls {
+    width: 70%;
+  }
+}
