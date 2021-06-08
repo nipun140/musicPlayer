@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital@1&display=swap");
+
+body {
+  background-color: #f6f6f6;
+  margin: 0px;
+  font-family: "Jost", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#title {
+  text-align: center;
+  text-shadow: 4px 4px 8px rgb(132, 216, 236);
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+}
+
+.music_container {
+  width: 30vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4rem;
+  box-shadow: 0px 0px 10px 2px rgb(207, 206, 206);
+  background-color: #ffffff;
+}
+
+.img_container {
+  width: 200px;
+  height: 200px;
+}
+
+#song {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.img_container img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 1px 10px 2px rgb(134, 133, 133);
+}
+
+.music_controls {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.music_controls i {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: font-size 0.2s;
+  filter: drop-shadow(0px 5px 5px rgb(99, 206, 233));
+}
+
+.main_control {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem !important;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.main_control:hover {
+  background-color: white;
+  color: black;
+}
+
+#image {
+  margin: 25px 0;
+}
+
+.anim_rotate {
+  animation: rotate 4s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
